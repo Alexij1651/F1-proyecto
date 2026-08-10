@@ -18,9 +18,9 @@ Currently in early development. Check the [Roadmap](#-roadmap) below to see wher
 
 ## ✨ Features
 
-- [ ] Fetch live session data from OpenF1
-- [ ] Display driver positions in a real-time-updating table
-- [ ] Show gaps/intervals between drivers
+- [x] Fetch live session data from OpenF1
+- [x] Display driver positions in a real-time-updating table
+- [x] Show gaps/intervals between drivers
 - [ ] Lap time comparison
 - [ ] Basic telemetry view (speed, throttle, brake)
 - [ ] Historical session lookup (past races)
@@ -51,7 +51,7 @@ No build steps, no dependencies to install — just plain JS talking to a public
 
 ## 🗺️ Roadmap
 
-1. - [ ] **Phase 1 — Basics**: fetch and render static session data (drivers, results)
+1. - [x] **Phase 1 — Basics**: fetch and render static session data (drivers, results)
 2. - [ ] **Phase 2 — Live feel**: polling with `setInterval` for a live-updating leaderboard
 3. - [ ] **Phase 3 — Backend**: own server + database for storing historical data
 4. - [ ] **Phase 4 — Mobile**: adapt the app for mobile devices

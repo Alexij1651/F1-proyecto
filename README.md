@@ -1,6 +1,6 @@
 # 🏎️ PitLine
 
-🔗 **[Ver demo en vivo](https://alexij1651.github.io/F1-proyecto/)**
+🔗 **[Live Preview](https://alexij1651.github.io/F1-proyecto/)**
 
 > A free, open-source Formula 1 live timing app — built from scratch to learn, race weekend by race weekend.
 

@@ -3,24 +3,11 @@ This is the calls to the API's of OpenF1 to make the work of the main page
 showing the results of the last race every weekend with a refresh delay of
 5 second per refresh
 
-genHeader shows the GP flag on the Header of the page.
-
 genTable make the calls to the sesion_result to get the informacion 
 and driver give back the driver personal information bc session doesn't
 gives us names o any personal info of the driver.
 */
 setInterval(genTable, 5000);
-
-function genHeader() {
-  fetch("https://api.openf1.org/v1/meetings?meeting_key=latest")
-    .then((carrera) => carrera.json())
-    .then((circuito) => {
-      document.getElementById("nombre-gp").textContent =
-        circuito[0].meeting_name;
-      document.getElementById("flag").src = circuito[0].country_flag;
-    })
-    .catch((error) => console.error("Error:", error));
-}
 
 function genTable() {
   const tabla = document.getElementById("cuerpo_tabla");
@@ -49,4 +36,3 @@ function genTable() {
 }
 
 genTable();
-genHeader();

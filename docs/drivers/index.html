@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PitLine — F1 Live Timing App</title>
     <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/driver.css" />
   </head>
   <body>
+    <div id="navbar"></div>
     <div>
       <h1>Driver Standing</h1>
     </div>
-
+    <div id="cuerpo_tabla"></div>
+    <div id="modal-piloto" class="modal oculto">
+      <div class="modal-contenido">
+        <button id="cerrar-modal">✕</button>
+        <h2 id="modal-nombre"></h2>
+        <ul id="modal-carreras"></ul>
+      </div>
+    </div>
     <script src="../js/drivers.js"></script>
   </body>
 </html>

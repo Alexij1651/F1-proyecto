@@ -1,0 +1,88 @@
+#cuerpo_tabla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.equipo-bloque {
+  background-color: var(--fondo-tabla);
+  padding: 20px;
+}
+
+.equipo-nombre {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  margin: 0 0 16px 0;
+}
+
+.equipo-puntos {
+  color: var(--texto-secundario);
+  font-weight: normal;
+}
+
+.pilotos-grid {
+  display: flex;
+  gap: 12px;
+}
+
+.piloto-card {
+  flex: 1;
+  cursor: pointer;
+  text-align: left;
+}
+
+.piloto-foto {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.piloto-nombre {
+  margin: 8px 0 2px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.piloto-puntos {
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+  margin: 0;
+}
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.oculto {
+  display: none;
+}
+
+.modal-contenido {
+  background: var(--fondo-tabla);
+  padding: 24px;
+  border-radius: 8px;
+  min-width: 300px;
+  position: relative;
+}
+
+#cerrar-modal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--texto-principal);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#modal-carreras li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--borde);
+}

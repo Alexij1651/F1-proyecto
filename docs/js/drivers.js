@@ -76,8 +76,7 @@ function genDrivers() {
                 for (const piloto of pilotosDelEquipo) {
                   html += `
                     <div class="piloto-card" data-driver="${piloto.driver_number}">
-                      <img src="${piloto.headshot_url.replace("1col", "4col")}" class="piloto-foto" alt="${piloto.full_name}">
-                      <p class="piloto-nombre">${piloto.full_name}</p>
+<img src="${piloto.headshot_url ? piloto.headshot_url.replace("1col", "4col") : "https://via.placeholder.com/300x300?text=No+Photo"}" class="piloto-foto" alt="${piloto.full_name}">                      <p class="piloto-nombre">${piloto.full_name}</p>
                       <p class="piloto-puntos">${piloto.points} pts</p>
                     </div>
                   `;

@@ -51,6 +51,11 @@ function genDrivers() {
           fetch("https://api.openf1.org/v1/drivers?session_key=latest")
             .then((r) => r.json())
             .then((infoPilotos) => {
+              if (!Array.isArray(puntos)) {
+                contenedor.innerHTML =
+                  "<p>No hay datos de clasificación disponibles en este momento.</p>";
+                return;
+              }
               const pilotosCompletos = infoPilotos.map((p) => {
                 const puntosPiloto = puntos.find(
                   (pt) => pt.driver_number == p.driver_number,

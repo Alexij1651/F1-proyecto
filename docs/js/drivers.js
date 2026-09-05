@@ -45,17 +45,27 @@ function genDrivers() {
   fetch("https://api.openf1.org/v1/championship_teams?session_key=latest")
     .then((r) => r.json())
     .then((equipos) => {
+      if (!Array.isArray(equipos)) {
+        contenedor.innerHTML = "<p>No hay datos de clasificación disponibles en este momento.</p>";
+        return;
+      }
+
       fetch("https://api.openf1.org/v1/championship_drivers?session_key=latest")
         .then((r) => r.json())
         .then((puntos) => {
+          if (!Array.isArray(puntos)) {
+            contenedor.innerHTML = "<p>No hay datos de clasificación disponibles en este momento.</p>";
+            return;
+          }
+
           fetch("https://api.openf1.org/v1/drivers?session_key=latest")
             .then((r) => r.json())
             .then((infoPilotos) => {
-              if (!Array.isArray(puntos)) {
-                contenedor.innerHTML =
-                  "<p>No hay datos de clasificación disponibles en este momento.</p>";
+              if (!Array.isArray(infoPilotos)) {
+                contenedor.innerHTML = "<p>No hay datos de clasificación disponibles en este momento.</p>";
                 return;
               }
+
               const pilotosCompletos = infoPilotos.map((p) => {
                 const puntosPiloto = puntos.find(
                   (pt) => pt.driver_number == p.driver_number,
@@ -81,7 +91,8 @@ function genDrivers() {
                 for (const piloto of pilotosDelEquipo) {
                   html += `
                     <div class="piloto-card" data-driver="${piloto.driver_number}">
-<img src="${piloto.headshot_url ? piloto.headshot_url.replace("1col", "4col") : "https://via.placeholder.com/300x300?text=No+Photo"}" class="piloto-foto" alt="${piloto.full_name}">                      <p class="piloto-nombre">${piloto.full_name}</p>
+                      <img src="${piloto.headshot_url ? piloto.headshot_url.replace("1col", "4col") : "https://via.placeholder.com/300x300?text=No+Photo"}" class="piloto-foto" alt="${piloto.full_name}">
+                      <p class="piloto-nombre">${piloto.full_name}</p>
                       <p class="piloto-puntos">${piloto.points} pts</p>
                     </div>
                   `;

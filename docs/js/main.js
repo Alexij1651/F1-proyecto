@@ -7,7 +7,7 @@ genTable make the calls to the sesion_result to get the informacion
 and driver give back the driver personal information bc session doesn't
 gives us names o any personal info of the driver.
 */
-setInterval(genTable, 5000);
+setInterval(() => {genTable();}, 5000);
 
 function genTable() {
   const tabla = document.getElementById("cuerpo_tabla");
